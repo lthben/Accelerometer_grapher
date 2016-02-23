@@ -16,7 +16,7 @@ void draw_graph_outlines()
 
         for (int i=0; i<SAMPLESIZE; i++) //tick markers
         {
-                line( (i*1.0/SAMPLESIZE)*400, 2, (i*1.0/SAMPLESIZE)*400, -2);
+                line( (i*1.0/(SAMPLESIZE-1))*400, 2, (i*1.0/(SAMPLESIZE-1))*400, -2);
         }
         popMatrix();
 
@@ -44,8 +44,14 @@ void update_graphs()
         translate(40, height/2);
 
         //moving ticker line
-        stroke(255, 255, 255, 25);
-        line( ( (array_index)*1.0 / (SAMPLESIZE-1) )*400, -180, ( (array_index)*1.0 / (SAMPLESIZE-1) )*400, 180);
+        stroke(255, 255, 255, 125);
+        strokeWeight(1);
+        
+        int ticker_index = 0; //always 1 behind the array index because array index updated before this is called
+        if (array_index>0) ticker_index = (array_index - 1);
+        else if (array_index == 0) ticker_index = SAMPLESIZE - 1;
+        
+        line( ( (ticker_index)*1.0 / (SAMPLESIZE-1) )*400, -180, ( (ticker_index)*1.0 / (SAMPLESIZE-1) )*400, 180);
 
         //data points
         for (int i=0; i<SAMPLESIZE; i++) 
