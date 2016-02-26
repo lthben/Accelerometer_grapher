@@ -1,2 +1,2 @@
-/dev/cu.usbmodemfa121
-100
+/dev/cu.usbmodem1411
+200
