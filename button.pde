@@ -25,7 +25,7 @@ void write_log_file()
                   
          int year = year(); int month = month(); int day = day(); int hour = hour(); int min = minute(); int sec = second();
          
-         pw = createWriter( str(year)+"_"+str(month)+"_"+str(day)+"__"+str(hour)+"_"+str(min)+"_"+str(sec) );
+         pw = createWriter( str(day)+"_"+str(month)+"_"+str(year)+"__"+str(hour)+"_"+str(min)+"_"+str(sec) );
                   
          for (int i=0; i<array_index; i++)
          {
