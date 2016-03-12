@@ -22,7 +22,10 @@ void write_log_file()
          {
                  pw = null;
          }
-         pw = createWriter("logged_data.txt");
+                  
+         int year = year(); int month = month(); int day = day(); int hour = hour(); int min = minute(); int sec = second();
+         
+         pw = createWriter( str(year)+"_"+str(month)+"_"+str(day)+"__"+str(hour)+"_"+str(min)+"_"+str(sec) );
                   
          for (int i=0; i<array_index; i++)
          {
