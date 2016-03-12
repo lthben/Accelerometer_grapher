@@ -28,7 +28,9 @@ void setup()
         //println("Sample size: " + SAMPLESIZE);
         vals = new float[SAMPLESIZE][2];
 
-        my_port.bufferUntil('\n');
+        my_port.clear();
+        //my_port.bufferUntil('\n');
+        
 }
 
 void draw() 
@@ -45,6 +47,10 @@ void draw()
 
         fill(255);
         //text(mouseX + "," + mouseY, mouseX, mouseY);
+        
+        button_update();
+        
+        println(array_index);
 }
 
 void serialEvent(Serial my_port) 
@@ -115,8 +121,8 @@ void show_extreme_values()
         text("max_yneg: " + max_yneg, 520, 370);
 
         fill(125);
-        text("xpos: " + raw_xpos, 525, 50);
-        text("ypos: " + raw_ypos, 650, 50);
+        text("xpos: " + raw_xpos, 525, 45);
+        text("ypos: " + raw_ypos, 620, 45);
         //text("array_index: " + array_index, 525, 50);
 }
 
